@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class LinkController extends Controller
 {
+    //metodo para guardar el link en la base de datos
     public function createLink(Request $request){
 
         $this->validate(request(), [
@@ -21,11 +22,13 @@ class LinkController extends Controller
         return redirect()->to('/')->with('success', "Link guardado con exito");
     }
 
+    //metodo para obtener la informacion de un link y mandarla a la vista de edit
     public function pageEditLink($id){
         $link= Link::findOrFail($id);
         return view('link.edit', compact('link'));
     }
 
+    //metodo para actualizar el link en la base de datos
     public function editLink(Request $request, $id){
         $this->validate(request(), [
             'nombre' => 'required',
@@ -38,6 +41,7 @@ class LinkController extends Controller
         return redirect()->to('/')->with('success', "Link editado con exito");
     }
 
+    //metodo para eliminar el link de la base de datos
     public function destroyLink($id){
         Link::destroy($id);
 

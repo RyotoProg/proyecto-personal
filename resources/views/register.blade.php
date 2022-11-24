@@ -15,7 +15,7 @@
 
                         <div class="form-group">
                             <label for="nombre">Nombre</label>
-                            <input class="form-control" type="text" name="nombre" id="nombre">
+                            <input class="form-control" type="text" name="nombre" id="nombre" value="{{old('nombre')}}">
                             @error('nombre')        
                                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                     {{ $message }}
@@ -28,7 +28,7 @@
                             
                         <div class="form-group">
                             <label for="apellido">Apellido</label>
-                            <input class="form-control" type="text" name="apellido" id="apellido">
+                            <input class="form-control" type="text" name="apellido" id="apellido" value="{{old('apellido')}}">
                             @error('apellido')        
                                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                     {{ $message }}
@@ -41,7 +41,7 @@
 
                         <div class="form-group">
                             <label for="correo">Correo</label>
-                            <input class="form-control" type="email" name="correo" id="correo">
+                            <input class="form-control" type="email" name="correo" id="correo" value="{{old('correo')}}">
                             @error('correo')        
                                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                     {{ $message }}
@@ -54,7 +54,7 @@
 
                         <div class="form-group">
                             <label for="pass">Contraseña</label>
-                            <input class="form-control" type="password" name="password" id="password">
+                            <input class="form-control" type="password" name="password" id="password" value="{{old('password')}}">
                             @error('password')        
                                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                     {{ $message }}
@@ -67,7 +67,7 @@
 
                         <div class="form-group">
                             <label for="pass">Repetir contraseña</label>
-                            <input class="form-control" type="password" name="password_confirmation" id="password_confirmation">
+                            <input class="form-control" type="password" name="password_confirmation" id="password_confirmation" value="{{old('password_confirmation')}}">
                         </div>
 
                         <div class="form-group">

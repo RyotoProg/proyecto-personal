@@ -24,12 +24,12 @@
 
                         <div class="form-group">
                             <label for="correo">Correo</label>
-                            <input class="form-control" type="email" name="correo" id="correo">
+                            <input class="form-control" type="email" name="correo" id="correo" value="{{old('correo')}}">
                         </div>
 
                         <div class="form-group">
                             <label for="pass">Contraseña</label>
-                            <input class="form-control" type="password" name="password" id="password">
+                            <input class="form-control" type="password" name="password" id="password" value="{{old('password')}}">
                         </div>
 
                         <div class="form-group">
