@@ -5,6 +5,16 @@
 @section('content')
     @include('components.nav')
 
+    @if(session()->has('success'))
+    <div class="float-right mt-3 mr-2">
+        <div class="alert alert-success alert-dismissible fade show d-inline" role="alert">
+            <strong>{{session('success')}}</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+    @endif
     <div class="container">
 
         <h3 class="mt-3 mb-2">Notas</h3>

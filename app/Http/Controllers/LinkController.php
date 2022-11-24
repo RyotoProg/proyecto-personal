@@ -18,7 +18,7 @@ class LinkController extends Controller
         $id= date("j").''.date("n").''.date("Y").''.date('g').''.date('i').''.date('s');
 
         Link::create(['id'=>$id,'nombre'=>$request->nombre, 'link'=>$request->link, 'id_user'=>$iduser]);
-        return redirect()->to('/');
+        return redirect()->to('/')->with('success', "Link guardado con exito");
     }
 
     public function pageEditLink($id){
@@ -35,12 +35,12 @@ class LinkController extends Controller
         $datos = request()->except(['_token', '_method']);
         Link::where('id','=',$id)->update($datos);
 
-        return redirect()->to('/');
+        return redirect()->to('/')->with('success', "Link editado con exito");
     }
 
     public function destroyLink($id){
         Link::destroy($id);
 
-        return redirect()->to('/');
+        return redirect()->to('/')->with('success', "Link eliminado con exito");
     }
 }

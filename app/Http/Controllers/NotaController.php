@@ -18,7 +18,7 @@ class NotaController extends Controller
         $id= date("j").''.date("n").''.date("Y").''.date('g').''.date('i').''.date('s');
 
         Nota::create(['id'=>$id,'nombre'=>$request->nombre, 'descripcion'=>$request->descripcion, 'id_user'=>$iduser]);
-        return redirect()->to('/');
+        return redirect()->to('/')->with('success', "Nota guardada con exito");
     }
 
     public function pageEditNote($id){
@@ -35,12 +35,12 @@ class NotaController extends Controller
         $datos = request()->except(['_token', '_method']);
         Nota::where('id','=',$id)->update($datos);
 
-        return redirect()->to('/');
+        return redirect()->to('/')->with('success', "Nota editada con exito");
     }
 
     public function destroyNote($id){
         Nota::destroy($id);
 
-        return redirect()->to('/');
+        return redirect()->to('/')->with('success', "Nota eliminada con exito");
     }
 }
