@@ -17,7 +17,7 @@
 
                             <div class="form-group">
                                 <label for="nombre">Nombre</label>
-                                <input class="form-control" type="text" name="nombre" id="nombre" value="{{$link->nombre}}">
+                                <input class="form-control" type="text" name="nombre" id="nombre" value="{{isset($link->nombre)?$link->nombre:old('nombre')}}">
                                 @error('nombre')        
                                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                         {{ $message }}
@@ -30,7 +30,7 @@
 
                             <div class="form-group">
                                 <label for="descripcion">Link</label>
-                                <input class="form-control" type="text" name="link" id="link" value="{{$link->link}}">
+                                <input class="form-control" type="text" name="link" id="link" value="{{isset($link->link)?$link->link:old('link')}}">
                                 @error('link')        
                                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                         {{ $message }}

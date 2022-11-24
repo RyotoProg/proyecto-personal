@@ -15,4 +15,8 @@ class Link extends Model
         'link',
         'id_user'
     ];
+
+    public function User(){
+        return $this->hasOne('App\Models\User', 'id', 'id_user');
+    }
 }

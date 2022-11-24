@@ -16,7 +16,7 @@
 
                             <div class="form-group">
                                 <label for="nombre">Nombre</label>
-                                <input class="form-control" type="text" name="nombre" id="nombre">
+                                <input class="form-control" type="text" name="nombre" id="nombre" value="{{old('nombre')}}">
                                 @error('nombre')        
                                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                         {{ $message }}
@@ -29,7 +29,7 @@
 
                             <div class="form-group">
                                 <label for="descripcion">Link</label>
-                                <input class="form-control" type="text" name="link" id="link">
+                                <input class="form-control" type="text" name="link" id="link" value="{{old('link')}}">
                                 @error('link')        
                                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                         {{ $message }}

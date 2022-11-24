@@ -16,7 +16,7 @@
 
                             <div class="form-group">
                                 <label for="nombre">Nombre</label>
-                                <input class="form-control" type="text" name="nombre" id="nombre">
+                                <input class="form-control" type="text" name="nombre" id="nombre" value="{{old('nombre')}}">
                                 @error('nombre')        
                                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                         {{ $message }}
@@ -29,7 +29,7 @@
 
                             <div class="form-group">
                                 <label for="descripcion">Descripcion</label>
-                                <textarea class="form-control" name="descripcion" id="descripcion" cols="30" rows="10"></textarea>
+                                <textarea class="form-control" name="descripcion" id="descripcion" cols="30" rows="10">{{old('descripcion')}}</textarea>
                                 @error('descripcion')        
                                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                         {{ $message }}
